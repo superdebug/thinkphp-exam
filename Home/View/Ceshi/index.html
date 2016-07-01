@@ -1,0 +1,19 @@
+hello 这是一个测试页<br>
+
+<table>
+    <tr>
+        <td>序号</td>
+        <td>栏目名称</td>
+    </tr>
+    <volist name="list" id="vo">
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.typename}</td>
+        </tr>
+    </volist>
+    <tr>
+        <td>
+            {$page}
+        </td>
+    </tr>
+</table>
