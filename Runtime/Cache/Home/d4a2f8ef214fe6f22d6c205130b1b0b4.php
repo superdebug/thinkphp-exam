@@ -1,7 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?>hello 这是一个测试页<br>
 
 <table>
-
     <tr>
         <td>序号</td>
         <td>栏目名称</td>
@@ -15,5 +14,4 @@
             <?php echo ($page); ?>
         </td>
     </tr>
-
 </table>

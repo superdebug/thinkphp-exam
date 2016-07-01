@@ -6,6 +6,8 @@ class CeshiController extends Controller {
         $typename = D('type');
         $count=$typename->count();
         $page= new \Think\Page($count,2);// 实例化分页类 传入总记录数和每页显示的记录数(2)
+        $page->setConfig('prev','上一页');
+        $page->setConfig('next','下一页');
         $show = $page->show();
         $list = $typename->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('list',$list);// 赋值数据集
