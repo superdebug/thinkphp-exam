@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
         <title>修改商品</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link href="{:ADMIN_CSS}mine.css" type="text/css" rel="stylesheet">
+        <link href="<?php echo ADMIN_CSS;?>mine.css" type="text/css" rel="stylesheet">
     </head>
 
     <body>
@@ -24,8 +24,8 @@
                 <tr>
                     <td>栏目名称</td>
                     <!--将id 做成隐藏域 -->
-                    <input type="hidden" name="typeid" value="{$typeid}" />
-                    <td><input type="text" name="typename" value="{$typename}" /></td>
+                    <input type="hidden" name="typeid" value="<?php echo ($typeid); ?>" />
+                    <td><input type="text" name="typename" value="<?php echo ($typename); ?>" /></td>
                 </tr>
 
                 

@@ -42,8 +42,8 @@
                     <tr>
                         <td>{$vo.id}</td>
                         <td><a href="#">{$vo.typename}</a></td>
-                        <td><a href="__CONTROLLER__/xiugai">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
+                        <td><a href="__CONTROLLER__/xiugai/id/{$vo.id}/typename/{$vo.typename}">修改</a></td>
+                        <td><a href="__CONTROLLER__/shanchu/id/{$vo.id}" onclick="return confirm('你确定要删除这个栏目吗?');">删除</a></td>
                     </tr>
                 </volist>
                     <tr>

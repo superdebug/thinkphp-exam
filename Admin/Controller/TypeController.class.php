@@ -45,8 +45,40 @@ class TypeController extends Controller
 
 
     //修改栏目方法
-    public function xiugai(){
-    	$this->display();
-    } 
+    public function xiugai()
+	{
+		if (IS_POST) {  //如果是从表单提交过来的，需要单独做判断
+			$data['typename'] = I('typename');
+			$data['id'] = I('typeid');
+			$type = D('type'); //实例化type表
+			if ($type->create($data)) { //进行验证，如果通过验证进行操作
+				if ($type->save()) {
+					$this->success('栏目修改成功', U('showlist'), 1); //如果跳转成功，出提示，并跳转到showlist
+				} else {
+					$this->error('栏目修改失败！');
+				}
+			} else {
+				$this->error($type->getError());
+			}
+			return;
+		}
+
+			$typename = I('typename'); //接收参数
+			$typeid = I('id');
+			$this->assign('typename', $typename); //将参数赋值到模板
+			$this->assign('typeid', $typeid);
+			$this->display();
+		}
+
+	public function  shanchu(){
+		$typeid = I('id');
+		$type=D('type');
+		if($type->delete($typeid)){ //如果删除成功
+			$this->success('删除成功',U('showlist'),3);
+
+		}else{
+			$this->error('删除失败');
+		}
+	}
 
 }

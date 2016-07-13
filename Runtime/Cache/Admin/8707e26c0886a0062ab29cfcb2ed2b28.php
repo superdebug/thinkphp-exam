@@ -41,8 +41,8 @@
                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td><?php echo ($vo["id"]); ?></td>
                         <td><a href="#"><?php echo ($vo["typename"]); ?></a></td>
-                        <td><a href="/exam1/index.php/Admin/Type/xiugai">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
+                        <td><a href="/exam1/index.php/Admin/Type/xiugai/id/<?php echo ($vo["id"]); ?>/typename/<?php echo ($vo["typename"]); ?>">修改</a></td>
+                        <td><a href="/exam1/index.php/Admin/Type/shanchu/id/<?php echo ($vo["id"]); ?>" onclick="return confirm('你确定要删除这个栏目吗?');">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     <tr>
                         <td colspan="20" style="text-align: center;">
