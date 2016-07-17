@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
 	//加载后台模板首页
     public function index(){
         $this->display();

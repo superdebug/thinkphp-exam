@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class TypeController extends Controller
+class TypeController extends BaseController
 {
 	//加载栏目列表
 	public function showlist()
