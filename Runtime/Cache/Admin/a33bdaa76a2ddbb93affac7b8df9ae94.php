@@ -11,7 +11,7 @@
                 <td width=260><img height=56 src="<?php echo ADMIN_IMG;?>header_left.jpg" 
                                    width=260></td>
                 <td style="font-weight: bold; color: #fff; padding-top: 20px" 
-                    align=middle>当前用户：<?php echo ($admin['user']); ?> &nbsp;&nbsp; <a style="color: #fff"
+                    align=middle>当前用户：<?php echo ($admin['user']); ?>-----<?php echo ($_SESSION['admin']['user']); ?> &nbsp;&nbsp; <a style="color: #fff"
                                                         href=""
                                                         target=main>修改口令</a> &nbsp;&nbsp; <a style="color: #fff" 
                                                         onclick="if (confirm('确定要退出吗？')) return true; else return false;" 
