@@ -13,7 +13,10 @@ class BaseController extends Controller
 	public function checklogin(){
 		if(!$_SESSION['admin']){
 			$this->error('请先登录！',U('Login/login'));
-
+		}else{
+			//在此处给session赋值admin可以将全局的session赋值给admin
+			$this->assign('admin',session('admin'));
+			//var_dump($_SESSION['admin']);
 		}
 
 	}

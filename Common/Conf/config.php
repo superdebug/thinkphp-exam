@@ -9,5 +9,6 @@ return array(
     'DB_PWD'                =>  '',          // 密码
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  'at_',    // 数据库表前缀
-    'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8    
+    'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8
+	
 );

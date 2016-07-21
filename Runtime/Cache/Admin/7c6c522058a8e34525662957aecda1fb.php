@@ -17,7 +17,7 @@
                         <li class="user_top_c"></li>
                         <li class="user_top_r"></li></ul>
                 </dd><dd id="user_main">
-                    <form action="#" method="post">
+                    <form action="" method="post">
                         <ul>
                             <li class="user_main_l"></li>
                             <li class="user_main_c">
@@ -25,11 +25,11 @@
                                     <ul>
                                         <li class="user_main_text">用户名： </li>
                                         <li class="user_main_input">
-                                            <input class="TxtUserNameCssClass" id="admin_user" maxlength="20" name="admin_user"> </li></ul>
+                                            <input class="TxtUserNameCssClass" id="admin_user" maxlength="20" name="user"> </li></ul>
                                     <ul>
                                         <li class="user_main_text">密&nbsp;&nbsp;&nbsp;&nbsp;码： </li>
                                         <li class="user_main_input">
-                                            <input class="TxtPasswordCssClass" id="admin_psd" name="admin_psd" type="password">
+                                            <input class="TxtPasswordCssClass" id="admin_psd" name="password" type="password">
                                         </li>
                                     </ul>
                                     <ul>
