@@ -36,24 +36,24 @@
                 <tbody><tr style="font-weight: bold;">
                         <td>序号</td>
                         <td>文章名称</td>
+                        <td>缩略图</td>
                         <td>所属分类</td>
                         <td>作者</td>
-                        <td>缩略图</td>
-                        <td align="center" colspan="2">操作</td>
+
+                        <td style="text-align:center" colspan="2">操作</td> <!--colspan="2" 跨两列 --> <!--style="text-align:center"  样式为文本居中 -->
                     </tr>
-                    <tr id="product1">
-                        <td>1</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
-                        <td>分类</td>
-                        <td>作者</td>
-                        <td><img src="<?php echo ADMIN_IMG;?>20121018-174034-97960.jpg" height="40" width="40"></td>
+                    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><a href="#"><?php echo ($vo["title"]); ?></a></td>
+                        <td><img src="/exam1<?php echo ($vo["pic"]); ?>" height="40" width="40"></td>
+                        <td><?php echo ($vo["typeid"]); ?></td>
+                        <td><?php echo ($vo["author"]); ?></td>
                         <td><a href="/exam1/index.php/Admin/Article/xiugai">修改</a></td>
                         <td><a href="javascript:;" onclick="return confirm('你确定要删除这篇文章吗？');">删除</a></td>
-                    </tr>
-
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     <tr>
                         <td colspan="20" style="text-align: center;">
-                            [1]
+                            <?php echo ($page); ?>
                         </td>
                     </tr>
                 </tbody>

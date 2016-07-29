@@ -36,24 +36,25 @@
                 <tbody><tr style="font-weight: bold;">
                         <td>序号</td>
                         <td>文章名称</td>
+                        <td>缩略图</td>
                         <td>所属分类</td>
                         <td>作者</td>
-                        <td>缩略图</td>
-                        <td align="center" colspan="2">操作</td> <!--colspan="2" 跨两列 -->
+                        <td style="text-align:center" colspan="2">操作</td> <!--colspan="2" 跨两列 --> <!--style="text-align:center"  样式为文本居中 -->
                     </tr>
-                    <tr id="product1">
-                        <td>1</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
-                        <td>分类</td>
-                        <td>作者</td>
-                        <td><img src="{:ADMIN_IMG}20121018-174034-97960.jpg" height="40" width="40"></td>
+                    <volist name="list" id="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td><a href="#">{$vo.title}</a></td>
+                        <td><img src="__ROOT__{$vo.pic}" height="40" width="40"></td>
+                        <td>{$vo.typeid}</td>
+                        <td>{$vo.author}</td>
                         <td><a href="__CONTROLLER__/xiugai">修改</a></td>
                         <td><a href="javascript:;" onclick="return confirm('你确定要删除这篇文章吗？');">删除</a></td>
                     </tr>
-
+                    </volist>
                     <tr>
                         <td colspan="20" style="text-align: center;">
-                            [1]
+                            {$page}
                         </td>
                     </tr>
                 </tbody>
