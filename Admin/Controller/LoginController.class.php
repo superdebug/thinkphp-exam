@@ -31,7 +31,7 @@ class LoginController extends Controller {
 
         ob_clean();
         $Verify = new \Think\Verify();
-        $Verify->fontSize = 20;
+        $Verify->fontSize = 25;
         $Verify->length   = 3;
         $Verify->useNoise = false;
         $Verify->entry();

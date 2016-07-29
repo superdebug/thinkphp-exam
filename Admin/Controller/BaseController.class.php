@@ -15,8 +15,11 @@ class BaseController extends Controller
 			$this->error('请先登录！',U('Login/login'));
 		}else{
 			//在此处给session赋值admin可以将全局的session赋值给admin
-			$this->assign('admin',session('admin'));
+			$admin=session('admin');
+			$this->assign('admin',$admin['user']);  //提取用户名信息到模板变量
+			$this->assign('admin_id',$admin['id']);  //提取id信息
 			//var_dump($_SESSION['admin']);
+			//var_dump($admin);
 		}
 
 	}

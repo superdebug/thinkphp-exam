@@ -23,12 +23,13 @@
             <table border="1" width="100%" class="table_a">
                 <tr>
                     <td>管理员名称</td>
-                    <td><input type="text" name="user" value="<?php echo ($admin['user']); ?>" /></td>
+                    <td><input type="text" name="user" value="<?php echo ($admin); ?>" /></td>
                 </tr>
 
                 <tr>
                     <td>管理员密码</td>
-                    <td><input type="text" name="password" value="<?php echo ($password); ?>" /></td>
+                    <td><input type="text" name="password" value="" /></td>
+                    <td><input type="hidden" name="id" value="<?php echo ($admin_id); ?>" /></td>
                 </tr>
 
 

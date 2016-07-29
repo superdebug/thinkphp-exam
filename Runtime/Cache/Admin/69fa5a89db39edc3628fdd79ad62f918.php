@@ -39,26 +39,14 @@
                             <td><a class="menuchild" href="/exam1/index.php/Admin/Type/showlist" target="main">栏目管理</a></td></tr>
                         <tr height="20">
                             <td width="30" align="center"><img width="9" height="9" src="<?php echo ADMIN_IMG;?>menu_icon.gif"></td>
-                            <td><a class="menuchild" href="#" target="main">文章管理</a></td></tr>
+                            <td><a class="menuchild" href="/exam1/index.php/Admin/Article/showlist" target="main">文章管理</a></td></tr>
                         <tr height="20">
                             <td width="30" align="center"><img width="9" height="9" src="<?php echo ADMIN_IMG;?>menu_icon.gif"></td>
                             <td><a class="menuchild" href="/exam1/index.php/Admin/Admin/admin_edit" target="main">管理员管理</a></td></tr>
 
                         <tr height="4">
                             <td colspan="2"></td></tr></tbody></table>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
                     </td>
                 <td width="1" bgcolor="#d1e6f7"></td>
             </tr>

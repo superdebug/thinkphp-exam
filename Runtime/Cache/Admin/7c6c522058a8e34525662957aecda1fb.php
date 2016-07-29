@@ -36,7 +36,7 @@
                                         <li class="user_main_text">验证码： </li>
                                         <li class="user_main_input">
                                             <input class="TxtValidateCodeCssClass" id="captcha" name="captcha" type="text">
-                                            <img height="20" width="90" src="/exam1/index.php/Admin/Login/code"  alt=""
+                                            <img height="26" width="120" src="/exam1/index.php/Admin/Login/code"  alt=""
                                                  border="1" onclick=this.src="/exam1/index.php/Admin/Login/code/"+Math.random() style="cursor:pointer;" title="看不清 点击更换验证码"
                                             />
                                         </li>
