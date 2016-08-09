@@ -45,6 +45,15 @@ class ArticleController extends BaseController {
     }
 
     public function xiugai(){
+        $article = D('article');
+
+        $type = D('type');
+        $types = $type->select(); //获取所有栏目分类
+
+        $id = I('id');
+        $res=$article->find($id);
+        $this->assign('res',$res);
+        $this->assign('types',$types);
 
         $this->display();
     }
@@ -65,5 +74,12 @@ class ArticleController extends BaseController {
         $this->display();
     }
 
+    public function shanchu(){
+        $id = I('id');
+        $article = D('article');
+        if($article->delete($id)){
+            $this->success('删除文章成功！',U('showlist'));
+        }
+    }
 
 }

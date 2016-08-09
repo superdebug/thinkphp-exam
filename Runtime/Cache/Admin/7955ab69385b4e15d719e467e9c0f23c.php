@@ -44,11 +44,15 @@
                     <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td><?php echo ($vo["id"]); ?></td>
                         <td><a href="#"><?php echo ($vo["title"]); ?></a></td>
-                        <td><img src="/exam1<?php echo ($vo["pic"]); ?>" height="40" width="40"></td>
+                        <td>
+                            <?php if($vo['pic'] != '' ): ?><img src="/exam1<?php echo ($vo["pic"]); ?>" height="40" width="40">
+                            <?php else: ?>
+                                <span style="color:#ccc;">暂无缩略图</span><?php endif; ?>
+                        </td>
                         <td><?php echo ($vo["typename"]); ?></td>
                         <td><?php echo ($vo["author"]); ?></td>
-                        <td><a href="/exam1/index.php/Admin/Article/xiugai">修改</a></td>
-                        <td><a href="javascript:;" onclick="return confirm('你确定要删除这篇文章吗？');">删除</a></td>
+                        <td><a href="/exam1/index.php/Admin/Article/xiugai/id/<?php echo ($vo["id"]); ?>">修改</a></td>
+                        <td><a href="/exam1/index.php/Admin/Article/shanchu/id/<?php echo ($vo["id"]); ?>" onclick="return confirm('你确定要删除这篇文章吗？');">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                     <tr>
                         <td colspan="20" style="text-align: center;">

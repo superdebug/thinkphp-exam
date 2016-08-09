@@ -19,48 +19,53 @@
         <div></div>
 
         <div style="font-size: 13px;margin: 10px 5px">
-            <form action="./admin.php?c=goods&a=add" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
             <table border="1" width="100%" class="table_a">
                 <tr>
-                    <td>文章名称</td>
-                    <td><input type="text" name="f_goods_name" value="KD877" /></td>
+                    <td>标题</td>
+                    <td><input type="text" name="f_goods_name" value="<?php echo ($res["title"]); ?>" /></td>
                 </tr>
+
+                <tr>
+                    <td>作者</td>
+                    <td><input type="text" name="f_goods_name" value="<?php echo ($res["auth"]); ?>" /></td>
+                </tr>
+
+                <tr>
+                    <td>热门</td>
+                    <!-- 这里使用的是tp的内置标签if 来判断check的值 这里必须用数组形式来写，否则会报错 -->
+                    <td><input type="checkbox" name="f_goods_name" <?php if($res[hot] == 1 ): ?>checked = "checked"<?php endif; ?> value="1" /></td>
+                </tr>
+
+                <tr>
+                    <td>最新</td>
+                    <td><input type="checkbox" name="f_goods_name" <?php if($res['new'] == 1 ): ?>checked = "checked"<?php endif; ?> value="1" /></td>
+                </tr>
+
                 <tr>
                     <td>文章分类</td>
                     <td>
                         <select name="f_goods_category_id">
                             <option>请选择</option>
-                            <option>家用电器</option>
-                            <option>手机数码</option>
-                            <option>电脑办公</option>
-                            <option>服饰鞋帽</option>
+                            <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!-- 条件判断 使用if 和volist(循环) 获取下拉列表值 -->
+                            <option <?php if($res['typeid'] == $vo['typeid'] ): ?>selected = "selected"<?php endif; ?>  value="<?php echo ($vo["typeid"]); ?>"><?php echo ($vo["typename"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>文章品牌</td>
+                    <td>缩略图</td>
+                    <td><input type="file" name="f_goods_image" value="" />
+                        <!-- 对缩略图进行显示，同时判断是否存在缩略图，如果不存在，则显示文字 -->
+                        <?php if($res['pic'] != '' ): ?><img height="40px;" src="/exam1<?php echo ($res['pic']); ?>">
+                            <?php else: ?>
+                            <span style="color:#ccc;">暂无缩略图</span><?php endif; ?>
+                </tr>
+                <tr>
+                    <td>文章内容</td>
                     <td>
-                        <select name="f_goods_brand_id">
-                            <option>请选择</option>
-                            <option>苹果</option>
-                            <option>诺基亚</option>
-                            <option>HTC</option>
-                            <option>摩托罗拉</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>文章价格</td>
-                    <td><input type="text" name="f_goods_price" value="1239.99" /></td>
-                </tr>
-                <tr>
-                    <td>文章图片</td>
-                    <td><input type="file" name="f_goods_image" value=".<?php echo ADMIN_IMG;?>2013-12-33.jpg" /></td>
-                </tr>
-                <tr>
-                    <td>文章详细描述</td>
-                    <td>
-                        <textarea name="f_goods_introduce">卓越的纤薄设计，却依然为更大的显示屏和更快的芯片预留了空间。超快无线网络连接也不会牺牲电池使用时间。全新耳机带来绝佳音效和非凡贴合的舒适度。如此众多的精彩功能融入这款 iPhone，如此，你才可以享受它的精彩更多。</textarea>
+                        <textarea style="width:500px; height:300px;" name="f_goods_introduce">
+                            <?php echo ($res["desc"]); ?>
+                        </textarea>
                     </td>
                 </tr>
                 
