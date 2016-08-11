@@ -44,8 +44,44 @@ class ArticleController extends BaseController {
         $this->display();
     }
 
-    public function xiugai(){
+    public function xiugai()
+    {
         $article = D('article');
+        if (IS_POST) {
+            $data['id'] = I('id');
+            $data['title'] = I('title');
+            $data['author'] = I('author');
+            $data['hot'] = I('hot');
+            $data['new'] = I('new');
+            $data['desc'] = I('desc');
+            $data['typeid'] = I('typeid');
+            //图片上传代码
+            if ($_FILES['pic']['tmp_name'] != '') {
+                $upload = new \Think\Upload();// 实例化上传类
+                $upload->maxSize = 3145728;// 设置附件上传大小
+                $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+                $upload->rootPath = './'; //设置上传文件路径
+                $upload->savePath = './Public/Uploads/'; // 设置附件上传目录 确保该路径及目录必须存在
+                $info = $upload->uploadOne($_FILES['pic']); //数据表对应的字段
+                if (!$info) {// 上传错误提示错误信息
+                    $this->error($upload->getError());
+                } else {// 上传成功 获取上传文件信息
+                    $data['pic'] = $info['savepath'] . $info['savename'];
+                }
+            }
+
+        if ($article->create($data)) { //首先对数据进行验证
+            if ($article->save($data)) {//如果数据验证成功
+                $this->success('文章修改成功', U('showlist'));
+            } else {//如果数据验证失败
+                $this->error(文章修改失败);
+            }
+        } else {
+            $this->error($article->getError());
+        }
+
+        return;
+     }
 
         $type = D('type');
         $types = $type->select(); //获取所有栏目分类
