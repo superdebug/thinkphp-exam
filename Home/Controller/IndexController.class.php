@@ -11,6 +11,16 @@ class IndexController extends Controller {
         $type = D('type');
         $types = $type->select();
         $this->assign('types',$types);
+
+        //最新文章
+        $article = D('article');
+        $condition['new'] = 1;
+        $res=$article->where($condition)->select();
+        $this->assign('res',$res);
+
+
+
+
         $this->display();
 
     }
