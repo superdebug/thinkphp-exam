@@ -27,7 +27,7 @@
 <ul class="excerpt thumb">
 	<?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
 			<a class="pic" href="/38073.html"><img alt="<?php echo ($vo["title"]); ?>" src="/exam1<?php echo ($vo["pic"]); ?>"></a>			<h2 class="excerpt-tit">
-				<a href="/38073.html"><?php echo ($vo["title"]); ?></a>
+				<a href="/exam1/index.php/Home/Article/index/id/<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></a>
 			</h2>
 			<p class="excerpt-desc">
 				<!--这里的简介是通过内容进行限定截取的 -->
