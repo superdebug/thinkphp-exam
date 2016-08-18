@@ -13,7 +13,12 @@ class ArticleController extends Controller {
         $condition['new'] = 1;
         $res=$article->where($condition)->select();
         $this->assign('res',$res);
-        
+
+        //接收传递的文章页
+        $resart=$article->relation(true)->find(I('id')); //relation(true) 表示使用关联模型
+        $this->assign('resart',$resart);
+
+
         $this->display('article');
 
     }

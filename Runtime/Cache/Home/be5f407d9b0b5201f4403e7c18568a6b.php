@@ -46,12 +46,12 @@
 	<div class="sidebar">
 
     <div class="widget widget_categories"><h3 class="widget-tit">文章分类</h3>		<ul>
-        <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="cat-item cat-item-18 current-cat"><a  href="/category/philosophy-life"><?php echo ($vo["typename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="cat-item cat-item-18 current-cat"><a  href="/exam1/index.php/Home/list/Index/typeid/<?php echo ($vo["typeid"]); ?>"><?php echo ($vo["typename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 
     </ul>
     </div>		<div class="widget widget_recent_entries">		<h3 class="widget-tit">最新发表</h3>		<ul>
-    <?php if(is_array($res)): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-            <a href="/38069.html"><?php echo ($vo["title"]); ?></a>
+    <?php if(is_array($res)): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><li>
+            <a href="/exam1/index.php/Home/Article/Index/id/<?php echo ($vo2["id"]); ?>"><?php echo ($vo2["title"]); ?></a>
         </li><?php endforeach; endif; else: echo "" ;endif; ?>
 </ul>
 </div></div>

@@ -26,8 +26,8 @@
 
 		<ul class="excerpt thumb">
 			<?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-					<a class="pic" href="/38073.html"><img alt="<?php echo ($vo["title"]); ?>" src="/exam1<?php echo ($vo["pic"]); ?>"></a>			<h2 class="excerpt-tit">
-					<a href="/38073.html"><?php echo ($vo["title"]); ?></a>
+					<a class="pic" href="/exam1/index.php/Home/Article/Index/id/<?php echo ($vo["id"]); ?>"><img alt="<?php echo ($vo["title"]); ?>" src="/exam1<?php echo ($vo["pic"]); ?>"></a>			<h2 class="excerpt-tit">
+					<a href="/exam1/index.php/Home/Article/Index/id/<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></a>
 				</h2>
 					<p class="excerpt-desc">
 						<!--这里的简介是通过内容进行限定截取的 -->
@@ -46,12 +46,12 @@
 	<div class="sidebar">
 
     <div class="widget widget_categories"><h3 class="widget-tit">文章分类</h3>		<ul>
-        <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="cat-item cat-item-18 current-cat"><a  href="/category/philosophy-life"><?php echo ($vo["typename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="cat-item cat-item-18 current-cat"><a  href="/exam1/index.php/Home/list/Index/typeid/<?php echo ($vo["typeid"]); ?>"><?php echo ($vo["typename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 
     </ul>
     </div>		<div class="widget widget_recent_entries">		<h3 class="widget-tit">最新发表</h3>		<ul>
-    <?php if(is_array($res)): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-            <a href="/38069.html"><?php echo ($vo["title"]); ?></a>
+    <?php if(is_array($res)): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><li>
+            <a href="/exam1/index.php/Home/Article/Index/id/<?php echo ($vo2["id"]); ?>"><?php echo ($vo2["title"]); ?></a>
         </li><?php endforeach; endif; else: echo "" ;endif; ?>
 </ul>
 </div></div>

@@ -2,14 +2,14 @@
 
     <div class="widget widget_categories"><h3 class="widget-tit">文章分类</h3>		<ul>
         <volist name="types" id="vo">
-            <li class="cat-item cat-item-18 current-cat"><a  href="/category/philosophy-life">{$vo.typename}</a></li>
+            <li class="cat-item cat-item-18 current-cat"><a  href="__MODULE__/list/Index/typeid/{$vo.typeid}">{$vo.typename}</a></li>
         </volist>
 
     </ul>
     </div>		<div class="widget widget_recent_entries">		<h3 class="widget-tit">最新发表</h3>		<ul>
-    <volist name="res" id="vo">
+    <volist name="res" id="vo2">
         <li>
-            <a href="/38069.html">{$vo.title}</a>
+            <a href="__MODULE__/Article/Index/id/{$vo2.id}">{$vo2.title}</a>
         </li>
     </volist>
 </ul>
